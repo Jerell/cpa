@@ -5,6 +5,7 @@ import constants
 import fugac
 import volstab
 import matriz
+import CPA
 
 
 class TestConstants(unittest.TestCase):
@@ -49,6 +50,12 @@ class TestMatriz(unittest.TestCase):
     def test_Gsselm(self):
         singular, x = matriz.Gsselm(np.ones((2, 3)), 1, np.ones(2))
         self.assertEqual(x[0], 1)
+
+
+class TestCPA(unittest.TestCase):
+    def test_Solu(self):
+        Xa, dXa, V = CPA.Solu(1.0, 1.0, 1.0, 1.0, 1.0, np.array([1.0, 1.0, 1.0, 1.0]))
+        self.assertEqual(Xa[0], 1.0)
 
 
 if __name__ == "__main__":

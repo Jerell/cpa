@@ -47,7 +47,7 @@ def CA(y, T, n):
     aij = np.empty((4, 4))
     for i in range(4):
         for j in range(4):
-            aij[i][j] = y[i] * y[j] * math.sqrt(ap[i] * ap[j])
+            aij[i, j] = y[i] * y[j] * math.sqrt(ap[i] * ap[j])
 
     At = np.sum(aij)
     D = At * n * n
