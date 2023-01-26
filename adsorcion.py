@@ -2,6 +2,7 @@ import numpy as np
 import constants
 import fugac
 import volstab
+import CPA
 
 
 def datos():
@@ -28,8 +29,7 @@ def datos():
     print(Pcz, tol, Vest)
 
     # Solu
-    V = 1
-    Xa = np.array([1, 1, 1, 1])
+    Xa, dXa, V = CPA.Solu(1.0, 1.0, 1.0, 1.0, 1.0, np.array([1.0, 1.0, 1.0, 1.0]))
     print("Volume:", V)
     print("Non associated components", Xa)
     # ----
