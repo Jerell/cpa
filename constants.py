@@ -1,7 +1,11 @@
 import math
 import numpy as np
 
+# [CH4, CO, CO2, N2]
+
+# critical temperature
 Tc = np.array([190.56, 132.85, 304.12, 126.2])
+# critical pressure
 Pc = np.array([45.992, 34.94, 73.74, 33.98])
 w = np.array([0.011, 0.045, 0.225, 0.037])
 na = np.array([15.68, 9.62, 34.04, 0.00])
