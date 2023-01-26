@@ -4,6 +4,7 @@ import numpy as np
 import constants
 import fugac
 import volstab
+import matriz
 
 
 class TestConstants(unittest.TestCase):
@@ -42,6 +43,12 @@ class TestVolstab(unittest.TestCase):
             1.0, 1.0, 1.0, 1.0, 1.0, np.array([1.0, 1.0, 1.0, 1.0])
         )
         self.assertEqual(tol, 1.0)
+
+
+class TestMatriz(unittest.TestCase):
+    def test_Gsselm(self):
+        singular, x = matriz.Gsselm(np.ones((2, 3)), 1, np.ones(2))
+        self.assertEqual(x[0], 1)
 
 
 if __name__ == "__main__":
